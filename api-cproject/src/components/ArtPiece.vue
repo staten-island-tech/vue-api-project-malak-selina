@@ -1,6 +1,8 @@
 <template>
   <div>
-      <img :src="art.thumbnail.lqip" alt="art image" :key="art.id" :art="art" class="picture">
+    <h1>{{ art.artist_title }}</h1>
+      <!-- <img :src="art.thumbnail.lqip" alt="art image" :key="art.id" :art="art" class="picture"> -->
+      <!-- <img :src="image.iiif_url"> -->
   </div>
 </template>
 

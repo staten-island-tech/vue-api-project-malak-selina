@@ -13,7 +13,8 @@ export default {
       },
     data(){
         return{
-            arts:[]
+            arts:[],
+            images:[]
         }
     },
     created(){
@@ -21,7 +22,9 @@ export default {
         .then(response => response.json())
         .then(response => {
             console.log(response.data);
+            console.log(response.config);
             this.arts = response.data
+            this.images = response.config
         })
         .catch(err => {
             console.log(err.response, 'There is an error!');
