@@ -17,16 +17,17 @@ export default {
         }
     },
     created(){
-        fetch('https://api.artic.edu/api/v1/artworks?page=2&limit=100')
+        fetch("https://api.artic.edu/api/v1/artworks?page=2&limit=100")
         .then(response => response.json())
         .then(response => {
-            console.log(response.data.image_id);
+            console.log(response.data);
             this.arts = response.data
         })
         .catch(err => {
             console.log(err.response, 'There is an error!');
         })
-    }
+    },
+    
 }
 </script>
 
