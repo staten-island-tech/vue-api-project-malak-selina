@@ -1,8 +1,10 @@
 <template>
-  <div>
-      <h1>Artworks</h1>
+<div class="all">
+    <h1>Artworks</h1>
+  <div class="art-list">
       <ArtPiece v-for="art in arts" :key="art.id" :art="art"/>
   </div>
+</div>
 </template>
 
 <script>
@@ -17,7 +19,7 @@ export default {
         }
     },
     created(){
-        fetch("https://api.artic.edu/api/v1/artworks?page=2&limit=100")
+        fetch("https://api.artic.edu/api/v1/artworks?page=2&limit=32")
         .then(response => response.json())
         .then(response => {
             console.log(response.data);
@@ -32,5 +34,15 @@ export default {
 </script>
 
 <style>
-
+.art-list{
+    display:flex;
+    width:90vw;
+    flex-wrap: wrap;
+    margin:0 auto;
+    justify-content: space-around;
+    align-items: center;
+}
+img{
+    width:20vw;
+}
 </style>
