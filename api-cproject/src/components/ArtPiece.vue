@@ -1,7 +1,9 @@
 <template>
   <div class="gallery">
+      <router-link :to="{ name:'ArtInfo', params: { id:art.id} }">
       <img :src="image" :alt="art.thumbnail.alt_text" :key="art.id" :art="art" class="picture">
       <p class="title">{{ art.title }}</p>
+      </router-link>
   </div>
 </template>
 

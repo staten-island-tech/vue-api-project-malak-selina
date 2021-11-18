@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import ArtList from "../views/ArtList.vue";
+import ArtInfo from "../views/ArtInfo.vue";
 
 Vue.use(VueRouter);
 
@@ -17,6 +18,14 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: ArtList,
+  },
+  {
+    path: "/information",
+    name: "ArtInfo",
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: ArtInfo,
   },
 ];
 

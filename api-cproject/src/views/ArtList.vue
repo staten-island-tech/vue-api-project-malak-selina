@@ -29,7 +29,11 @@ export default {
             console.log(err.response, 'There is an error!');
         })
     },
-    
+    computed:{
+        getArt: function(id){
+            return this.arts.id.get('/artworks/' + id)
+        }
+    }
 }
 </script>
 
