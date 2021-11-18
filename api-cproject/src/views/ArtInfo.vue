@@ -1,6 +1,6 @@
 <template>
   <div class="info">
-<p >{{ image.title }}</p>
+    <p>{{ this.art.title }}</p>
   </div>
 </template>
 
@@ -25,6 +25,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+/* 
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
 
 </style>
