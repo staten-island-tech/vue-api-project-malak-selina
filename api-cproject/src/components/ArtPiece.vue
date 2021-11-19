@@ -10,17 +10,19 @@
 <script>
 export default {
     props:{
-        art: Object
+        art: Object,
+        id: Number,
     },
      computed: {
         image: function(){
             return `https://www.artic.edu/iiif/2/${this.art.image_id}/full/500,/0/default.jpg`;
         },
     }, 
+
 }
 </script>
 
-<style>
+<style scoped>
     .gallery{
         position: relative;
     }
