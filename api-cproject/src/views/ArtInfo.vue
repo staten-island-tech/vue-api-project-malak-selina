@@ -35,7 +35,17 @@ export default {
 </script>
 
 <style scoped>
+<<<<<<< HEAD
     .info{
         color:black;
     }
+=======
+/* 
+div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+>>>>>>> 35c12297991f68fa977f3a85fe8cfbf979b02a3f
 </style>
