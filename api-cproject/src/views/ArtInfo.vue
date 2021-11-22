@@ -1,6 +1,6 @@
 <template>
   <div class="info">
-    <p>{{ this.arts.title }}</p>
+    <p>{{ this.art.title }}</p>
   </div>
 </template>
 
@@ -23,12 +23,12 @@ export default {
         })
     },
     methods:{
-         getArts() {
-         return this.arts.get('/informations')
-        },
-        getArt: function(id){
-            return this.arts.id.get('/information/' + id)
-        },
+        /*  getArts() {
+         return this.art.get('/information')
+        }, 
+         getArt: function(id){
+            return this.art.id.get('/information/' + id)
+        }, */
         
     }
 }
