@@ -38,7 +38,7 @@ export default {
     },
     methods:{
         async getData(){
-            const data = await fetch( `https://api.artic.edu/api/v1/artworks/129884`);
+            const data = await fetch( `https://api.artic.edu/api/v1/artworks/${this.id}`);
             const response = await data.json();
             this.art = response
             console.log(response)
@@ -48,12 +48,6 @@ export default {
         this.getData()
     },  
 
-    // getArts() {
-    //     return this.arts.get('/information')
-    //  },
-    // getArt(id) {
-    //     return this.arts.get('/information/' + id)
-    // },
 
 }
 </script>
@@ -64,10 +58,18 @@ export default {
     }
     .chart{
         display: flex;
-        
+        margin:0 auto;
+        justify-content: center;
+        align-items: center;
+        width:70vw;
+        height: 50vh;
+        border:black .1rem;
     }
     ul{
         list-style-type: none;
+    }
+    li{
+        margin-bottom:1rem;
     }
     .leftchart,
     .rightchart{
