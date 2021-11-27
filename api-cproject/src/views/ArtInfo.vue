@@ -1,7 +1,14 @@
 <template>
   <div class="info">
-    <h2>{{ art.data.title }}</h2>
-     <h2>{{ art.data.department_title }}</h2>
+    <h2 class="artname">{{ art.data.title }}</h2>
+    <div class="middle">
+        <router-link to="/list">
+      <button class="btn"> Back </button>
+      </router-link>
+          <span class="red"></span>
+    </div>
+     <h4 class="genre">{{ art.data.department_title }}</h4>
+    <img src="this.specificImage" alt="">
     <div class="chart">
         <div class="leftchart">
             <ul>
@@ -34,6 +41,7 @@ export default {
     data(){
         return {
             art:{},
+            specificImage: {},
         }
     },
     methods:{
@@ -42,10 +50,16 @@ export default {
             const response = await data.json();
             this.art = response
             console.log(response)
+        },
+        async getSpecificImage(){
+            const painting = await fetch(`https://www.artic.edu/iiif/2/${this.image_id}/full/500,/0/default.jpg`);
+            const result = await painting.json();
+            this.specificImage = result
         }
     },
     created(){
         this.getData()
+        this.getSpecificImage()
     },  
 
 
@@ -53,8 +67,10 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
     .info{
         color:black;
+        font-family: 'Roboto', sans-serif;
     }
     .chart{
         display: flex;
@@ -75,6 +91,47 @@ export default {
     .rightchart{
         display:flex;
         flex-direction: column;
+        font-size: 1rem;
+    }
+    .leftchart{
+        font-weight: 900;
+        border-right: .1rem solid gray;
+        padding:1rem;
+    }
+    .rightchart{
+        font-style: oblique;
+    }
+    .artname{
+        margin-top:1.5rem;
 
     }
+    .genre{
+        color:gray;
+        text-transform:uppercase;
+    }
+    .btn{
+        background-color: white;
+        color: black;
+        border: 2px solid black; 
+        padding:.5rem;
+        font-weight: 600;
+        margin-left:0;
+    }
+    .middle{
+        display:flex;
+        align-items: center;
+        margin:0 auto;
+        justify-content: center;
+        width:70vw;
+    }
+    .red{
+    width:50px;
+    height:5px;
+    margin-top:.5rem;
+    background-color: red;
+    border-radius: 5px;
+    color:red;
+    margin-left:10rem;
+    margin-right:20%;
+}
 </style>

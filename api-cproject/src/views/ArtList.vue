@@ -1,6 +1,7 @@
 <template>
 <div class="all">
     <h1 class="toptitle">Artworks</h1>
+    <span class="red">redblock</span>
   <div class="art-list">
       <ArtPiece v-for="art in arts" :key="art.id" :art="art"/>
   </div>
@@ -46,5 +47,13 @@ export default {
 }
 img{
     width:20vw;
+}
+.red{
+    width:50px;
+    height:5px;
+    margin-top:.5rem;
+    background-color: red;
+    border-radius: 5px;
+    color:red;
 }
 </style>

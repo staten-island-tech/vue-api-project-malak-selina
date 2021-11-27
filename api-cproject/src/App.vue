@@ -21,9 +21,9 @@
 .logo{
   width:12vw;
   margin:0 auto;
+  margin-bottom:2rem;
   float: left;
   z-index: 10;
-  position:fixed;
 }
 
 </style>
