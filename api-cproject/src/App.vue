@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/list">Art List</router-link>
+      <router-link to="/list">
+      <img src="./assets/logo.png" alt="Logo" class="logo">
+      </router-link>
     </div>
-    <router-view/>
+    <router-view />
   </div>
 </template>
-
 
 <style>
 #app {
@@ -18,16 +18,10 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
+.logo{
+  width:12vw;
+  margin:0 auto;
+  float: left;
 }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
