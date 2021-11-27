@@ -8,7 +8,7 @@
           <span class="red"></span>
     </div>
      <h4 class="genre">{{ art.data.department_title }}</h4>
-    <img src="this.specificImage" alt="">
+    <!-- <img src="specificImageId" alt="painting"> -->
     <div class="chart">
         <div class="leftchart">
             <ul>
@@ -49,17 +49,23 @@ export default {
             const data = await fetch( `https://api.artic.edu/api/v1/artworks/${this.id}`);
             const response = await data.json();
             this.art = response
-            console.log(response)
+            // console.log(response)
         },
-        async getSpecificImage(){
-            const painting = await fetch(`https://www.artic.edu/iiif/2/${this.image_id}/full/500,/0/default.jpg`);
-            const result = await painting.json();
-            this.specificImage = result
-        }
+        // async getSpecificImage(){
+        //     const painting = await fetch(`https://www.artic.edu/iiif/2/${this.art.data.image_id}/full/500,/0/default.jpg`);
+        //     // const result = await painting.json();
+        //     this.specificImage = painting
+        //     console.log(painting)
+        // }
+    },
+    computed:{
+        specificImageId: function(){
+            return `https://www.artic.edu/iiif/2/${this.art.data.image_id}/full/500,/0/default.jpg`;
+        },
     },
     created(){
         this.getData()
-        this.getSpecificImage()
+        // this.getSpecificImage()
     },  
 
 
@@ -97,9 +103,11 @@ export default {
         font-weight: 900;
         border-right: .1rem solid gray;
         padding:1rem;
+        width:15vw;
     }
     .rightchart{
         font-style: oblique;
+        width:40vw;
     }
     .artname{
         margin-top:1.5rem;
@@ -116,6 +124,7 @@ export default {
         padding:.5rem;
         font-weight: 600;
         margin-left:0;
+        content: '\00bb';
     }
     .middle{
         display:flex;

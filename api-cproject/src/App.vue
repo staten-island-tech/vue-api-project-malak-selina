@@ -8,6 +8,15 @@
     <router-view />
   </div>
 </template>
+<script>
+// import ArtList from '@/views/ArtList.vue'
+
+// export default{
+//   component: {
+//     ArtList
+//   },
+// }
+</script>
 
 <style>
 #app {
