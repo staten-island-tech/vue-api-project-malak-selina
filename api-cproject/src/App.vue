@@ -22,6 +22,8 @@
   width:12vw;
   margin:0 auto;
   float: left;
+  z-index: 10;
+  position:fixed;
 }
 
 </style>

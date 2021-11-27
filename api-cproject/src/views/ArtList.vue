@@ -1,6 +1,6 @@
 <template>
 <div class="all">
-    <h1>Artworks</h1>
+    <h1 class="toptitle">Artworks</h1>
   <div class="art-list">
       <ArtPiece v-for="art in arts" :key="art.id" :art="art"/>
   </div>
@@ -33,6 +33,9 @@ export default {
 </script>
 
 <style scoped>
+.toptitle{
+    margin-top:2rem;
+}
 .art-list{
     display:flex;
     width:90vw;
